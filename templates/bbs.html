@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple BBS</title>
+</head>
+<body>
+<h1>Simple BBS</h1>
+
+<form action="/bbs" method="post">
+    Username: <input type="text" name="username"><br>
+    Message: <input type="text" name="message"><br>
+    <input type="submit">
+    <hr>
+</form>
+
+{% if post_data %}
+{% for data in post_data %}
+<li>{{ data[0] }}: {{ data[1] }}</li><hr>
+{% endfor %}
+{% endif %}
+</body>
+</html>
